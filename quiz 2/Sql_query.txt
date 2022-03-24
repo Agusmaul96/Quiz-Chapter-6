@@ -1,0 +1,34 @@
+
+CREATE DATABASE book_store;
+
+
+CREATE TABLE Books(
+     id BIGSERIAL PRIMARY KEY,
+     name varchar(100) NOT NULL, 
+     author varchar(50) NOT NULL,
+     price integer, 
+     is_publish boolean
+);
+
+INSERT INTO Books(name,author,price,is_publish)
+ VALUES 
+('The Intelligent Investor','Benjamin Graham','175500',TRUE),
+('Segala Galanya Amyar','Mark Manson','111000',FALSE),
+('Rich Dad Poor Dad','Robert T. Kiyosaki','54400',FALSE),
+('Novel Bulan',	'Tere Liye','76000',TRUE),
+('You Do You','Fellexandro Ruby','102400',TRUE),
+('Start with Why','Simon Sinek','80000',FALSE);
+
+
+SELECT name, author,price from Books;
+
+SELECT name,author,price from Books where price >= 80000;
+
+SELECT name,author,price from Books where name like 'Rich%';
+
+UPDATE  Books  SET  price = 180000  WHERE   author = 'Simon Sinek';
+UPDATE  Books  SET  Is_publish = TRUE  WHERE   author = 'Simon Sinek';
+
+DELETE FROM Books WHERE name = 'Novel Bulan';
+
+SELECT name, author,price from Books ORDER by price DESC;
