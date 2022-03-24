@@ -1,4 +1,11 @@
 const { books } = require("./models");
-books.query("UPDATE  Books  SET  price = 180000  WHERE   author = 'Simon Sinek'", (books) => {
-  console.log(books);
-});
+books.update(
+  {
+    price: "180000",
+  },
+  {
+    where: {
+      author: "Simon Sinek",
+    },
+  }
+);
