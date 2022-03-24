@@ -30,5 +30,3 @@ UPDATE  Books  SET  price = 180000  WHERE   author = 'Simon Sinek';
 UPDATE  Books  SET  Is_publish = TRUE  WHERE   author = 'Simon Sinek';
 
 DELETE FROM Books WHERE name = 'Novel Bulan';
-
-SELECT name, author,price from Books ORDER by price DESC;
